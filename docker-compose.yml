@@ -1,0 +1,28 @@
+﻿services:
+  studentservice.webapi:
+    image: ${DOCKER_REGISTRY-}studentservicewebapi
+    build:
+      context: .
+      dockerfile: StudentService.WebApi/Dockerfile
+    ports:
+      - 8099:8080
+    depends_on:
+      - postgresstudent
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  postgresstudent:
+    image: postgres
+    container_name: postgresstudent
+    environment:
+      - POSTGRES_PASSWORD=111QQQwww
+      - POSTGRES_USER=root
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    container_name: adminer
+    ports:
+      - 8080:8080
