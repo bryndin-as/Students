@@ -24,9 +24,10 @@ namespace StudentService.DAL.Services
             return _mapper.Map<List<StudentBaseDTO>>(items);
         }
 
+
         public async Task<IEnumerable<SubjectBaseDTO>> GetSubjectsAsync()
         {
-            var items = await _unitOfWork.SubjectRepository.GetAllAsync();   
+            var items = await _unitOfWork.SubjectRepository.GetAllAsync();
             return _mapper.Map<List<SubjectBaseDTO>>(items);
 
         }
@@ -34,7 +35,7 @@ namespace StudentService.DAL.Services
         public async Task<IEnumerable<GradeBaseDTO>> GetGradesAsync()
         {
             var items = await _unitOfWork.GradeRepository.GetAllAsync();
-            return _mapper.Map <List<GradeBaseDTO>>(items);
+            return _mapper.Map<List<GradeBaseDTO>>(items);
         }
 
         public async Task<int> CreateStudentAsync(StudentCreateDTO item)
@@ -62,7 +63,23 @@ namespace StudentService.DAL.Services
 
         public async Task AddSeedTest(int count)
         {
-            await _unitOfWork.TestFillDbRepository.SeedTestDataAsync(count);    
+            await _unitOfWork.TestFillDbRepository.SeedTestDataAsync(count);
+        }
+
+        public async Task<IEnumerable<StudentWithGradesDTO>> GetStudentWithGradesAsync()
+        {
+            var students = await _unitOfWork.StudentRepository.GetAllWithGradesAsync();
+
+            var studentDTOs = students.Select(student => new StudentWithGradesDTO
+            {
+                StudentId = student.Id,
+                StudentName = student.Name,
+                StudentSurname = student.Surname,
+                SubjectCount = student.Grades.Select(g => g.SubjectId).Distinct().Count(),
+                AverageGrade = student.Grades.Any() ? Math.Round(Math.Round(student.Grades.Average(g => g.Value), 2), 2) : 0
+            }).ToList();
+
+            return studentDTOs;
         }
     }
 }

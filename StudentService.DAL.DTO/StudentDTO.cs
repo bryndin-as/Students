@@ -1,20 +1,20 @@
 ﻿namespace StudentService.DAL.DTO
 {
     [Serializable]
-    public class StudentBaseDTO
+    public record StudentBaseDTO
     {
-        public string Name { get; set; }
+        public int Id { get; init; }
 
-        public string Surname { get; set; }
+        public string Name { get; init; }
+
+        public string Surname { get; init; }
     }
 
     [Serializable]
-    public class StudentCreateDTO : StudentBaseDTO
-    { }
-
-    [Serializable]
-    public class StudentUpdateDTO : StudentBaseDTO
+    public record StudentCreateDTO
     {
-        public int Id { get; set; }
+        public string Name { get; init; }
+
+        public string Surname { get; init; }
     }
 }

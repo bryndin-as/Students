@@ -10,7 +10,9 @@ namespace StudentService.DAL.Core
 
         Task<IEnumerable<SubjectBaseDTO>> GetSubjectsAsync();  
 
-        Task<IEnumerable<GradeBaseDTO>> GetGradesAsync();   
+        Task<IEnumerable<GradeBaseDTO>> GetGradesAsync();
+
+        Task<IEnumerable<StudentWithGradesDTO>> GetStudentWithGradesAsync();
 
         Task<int> CreateStudentAsync(StudentCreateDTO item); 
 

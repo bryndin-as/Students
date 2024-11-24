@@ -3,23 +3,18 @@
 namespace StudentService.DAL.DTO
 {
     [Serializable]
-    public class GradeBaseDTO 
+    public record GradeBaseDTO
     {
         [Range(1, 5, ErrorMessage = "Value must be between 1 and 5.")]
-        public int Value { get; set; }
+        public int Value { get; init; }  
 
-        public int StudentId { get; set; }
+        public int StudentId { get; init; } 
 
-        public int SubjectId { get; set; }
+        public int SubjectId { get; init; }
     }
 
     [Serializable]
-    public class GradeCreateDTO : GradeBaseDTO
+    public record GradeCreateDTO : GradeBaseDTO
     { }
 
-    [Serializable]
-    public class GradeUpdateDTO : GradeBaseDTO
-    {
-        public int Id { get; set; }
-    }
 }
