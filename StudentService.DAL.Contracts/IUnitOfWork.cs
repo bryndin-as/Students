@@ -5,12 +5,13 @@ namespace StudentService.DAL.Contracts
 {
     public interface IUnitOfWork
     {
-        IGenericRepository<Student> StudentRepository { get; }
+        IStudentRepository StudentRepository { get; }
 
         IGenericRepository<Subject> SubjectRepository { get; }
 
         IGenericRepository<Grade> GradeRepository { get; }  
 
-        ITestRepository TestFillDbRepository { get; }  
+        ITestRepository TestFillDbRepository { get; }
+
     }
 }

@@ -1,0 +1,38 @@
+﻿<Window x:Class="StudentService.Client.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="clr-namespace:StudentService.Client.ViewModel.ViewModel;assembly=StudentService.Client.ViewModel"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewPage ="clr-namespace:StudentService.Client.UI.Pages"
+        xmlns:local="clr-namespace:StudentService.Client.UI"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
+        Title="Студенты" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type vm:CmmonViewModel}">
+                <viewPage:CommoView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:StudentViewModel}">
+                <viewPage:StudentView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SubjectViewModel}">
+                <viewPage:SubjectView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl SelectedIndex="{Binding SelectedTabIndex}">
+            <TabItem Header="Сводная таблица" />
+            <TabItem Header="Таблица студентов" />
+            <TabItem Header="Таблица предметов" />
+        </TabControl>
+        <ContentControl Content="{Binding Navigation.CurrentContent}" 
+                        Margin="0,25,0,0" />
+    </Grid>
+
+</Window>

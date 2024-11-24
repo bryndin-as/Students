@@ -9,42 +9,38 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{1E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{26A5A936-8483-47A6-B24B-1A2BEE3DF214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentService.DAL.Contracts", "StudentService.DAL.Contracts\StudentService.DAL.Contracts.csproj", "{9374C211-FD4A-45EA-A35F-40F1C378F498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentService.DAL.Contracts", "StudentService.DAL.Contracts\StudentService.DAL.Contracts.csproj", "{9374C211-FD4A-45EA-A35F-40F1C378F498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentService.DAL.EF", "StudentService.DAL.EF\StudentService.DAL.EF.csproj", "{C47D2E97-48C6-4E10-BBEB-33183C93B181}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentService.DAL.EF", "StudentService.DAL.EF\StudentService.DAL.EF.csproj", "{C47D2E97-48C6-4E10-BBEB-33183C93B181}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentService.DAL.Model", "StudentService.DAL.Model\StudentService.DAL.Model.csproj", "{315D13A7-DFF2-4256-B6B7-C31E50B84123}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentService.DAL.Model", "StudentService.DAL.Model\StudentService.DAL.Model.csproj", "{315D13A7-DFF2-4256-B6B7-C31E50B84123}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentService.DAL.Core", "StudentService.DAL.Core\StudentService.DAL.Core.csproj", "{FF669FC7-14D5-47C2-A5A6-3F9D0C0C2945}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentService.DAL.Core", "StudentService.DAL.Core\StudentService.DAL.Core.csproj", "{FF669FC7-14D5-47C2-A5A6-3F9D0C0C2945}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentService.DAL.DTO", "StudentService.DAL.DTO\StudentService.DAL.DTO.csproj", "{C23C79D7-5FD7-46C7-8A74-8CC22B4C5595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentService.DAL.DTO", "StudentService.DAL.DTO\StudentService.DAL.DTO.csproj", "{C23C79D7-5FD7-46C7-8A74-8CC22B4C5595}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentService.DAL.Services", "StudentService.DAL.Services\StudentService.DAL.Services.csproj", "{FC796E64-46C9-49D3-939F-74C499956BAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentService.DAL.Services", "StudentService.DAL.Services\StudentService.DAL.Services.csproj", "{FC796E64-46C9-49D3-939F-74C499956BAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentService.WebApi", "StudentService.WebApi\StudentService.WebApi.csproj", "{B0EBB114-86ED-4D96-8EDE-F1401024927F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentService.WebApi", "StudentService.WebApi\StudentService.WebApi.csproj", "{B0EBB114-86ED-4D96-8EDE-F1401024927F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9BD463B-BD31-4839-A5E5-67BA96A7F5E6}"
 	ProjectSection(SolutionItems) = preProject
-		docker-compose.yml = docker-compose.yml
 		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{048FA255-9DC2-49C3-86F3-69044B78FFAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentService.Client.Core", "StudentService.Client.Core\StudentService.Client.Core.csproj", "{F8CD5969-89FB-46CC-945A-7DB8E690F8D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentService.Client.UI", "StudentService.Client.UI\StudentService.Client.UI.csproj", "{86D1166B-D020-4014-90B1-8F72C3A3AE8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentService.Client.ViewModel", "StudentService.Client.ViewModel\StudentService.Client.ViewModel.csproj", "{FD81DC0C-3166-4193-828E-6519A88F61A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{9374C211-FD4A-45EA-A35F-40F1C378F498} = {64787664-B09F-48FE-BD65-906741B74FD2}
-		{C47D2E97-48C6-4E10-BBEB-33183C93B181} = {64787664-B09F-48FE-BD65-906741B74FD2}
-		{315D13A7-DFF2-4256-B6B7-C31E50B84123} = {64787664-B09F-48FE-BD65-906741B74FD2}
-		{FF669FC7-14D5-47C2-A5A6-3F9D0C0C2945} = {1EE5D93F-1CC0-41C0-BD99-1C08E6192ED1}
-		{C23C79D7-5FD7-46C7-8A74-8CC22B4C5595} = {1EE5D93F-1CC0-41C0-BD99-1C08E6192ED1}
-		{FC796E64-46C9-49D3-939F-74C499956BAF} = {1EE5D93F-1CC0-41C0-BD99-1C08E6192ED1}
-		{B0EBB114-86ED-4D96-8EDE-F1401024927F} = {26A5A936-8483-47A6-B24B-1A2BEE3DF214}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9374C211-FD4A-45EA-A35F-40F1C378F498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -75,5 +71,35 @@ Global
 		{B0EBB114-86ED-4D96-8EDE-F1401024927F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0EBB114-86ED-4D96-8EDE-F1401024927F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0EBB114-86ED-4D96-8EDE-F1401024927F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8CD5969-89FB-46CC-945A-7DB8E690F8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8CD5969-89FB-46CC-945A-7DB8E690F8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8CD5969-89FB-46CC-945A-7DB8E690F8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8CD5969-89FB-46CC-945A-7DB8E690F8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D1166B-D020-4014-90B1-8F72C3A3AE8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D1166B-D020-4014-90B1-8F72C3A3AE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D1166B-D020-4014-90B1-8F72C3A3AE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D1166B-D020-4014-90B1-8F72C3A3AE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD81DC0C-3166-4193-828E-6519A88F61A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD81DC0C-3166-4193-828E-6519A88F61A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD81DC0C-3166-4193-828E-6519A88F61A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD81DC0C-3166-4193-828E-6519A88F61A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9374C211-FD4A-45EA-A35F-40F1C378F498} = {64787664-B09F-48FE-BD65-906741B74FD2}
+		{C47D2E97-48C6-4E10-BBEB-33183C93B181} = {64787664-B09F-48FE-BD65-906741B74FD2}
+		{315D13A7-DFF2-4256-B6B7-C31E50B84123} = {64787664-B09F-48FE-BD65-906741B74FD2}
+		{FF669FC7-14D5-47C2-A5A6-3F9D0C0C2945} = {1EE5D93F-1CC0-41C0-BD99-1C08E6192ED1}
+		{C23C79D7-5FD7-46C7-8A74-8CC22B4C5595} = {1EE5D93F-1CC0-41C0-BD99-1C08E6192ED1}
+		{FC796E64-46C9-49D3-939F-74C499956BAF} = {1EE5D93F-1CC0-41C0-BD99-1C08E6192ED1}
+		{B0EBB114-86ED-4D96-8EDE-F1401024927F} = {26A5A936-8483-47A6-B24B-1A2BEE3DF214}
+		{F8CD5969-89FB-46CC-945A-7DB8E690F8D8} = {048FA255-9DC2-49C3-86F3-69044B78FFAB}
+		{86D1166B-D020-4014-90B1-8F72C3A3AE8D} = {048FA255-9DC2-49C3-86F3-69044B78FFAB}
+		{FD81DC0C-3166-4193-828E-6519A88F61A8} = {048FA255-9DC2-49C3-86F3-69044B78FFAB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AD787A4-7731-4031-85F8-EEF7B09A83C7}
 	EndGlobalSection
 EndGlobal

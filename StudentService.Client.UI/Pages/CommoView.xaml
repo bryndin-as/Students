@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="StudentService.Client.UI.Pages.CommoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:StudentService.Client.ViewModel.ViewModel;assembly=StudentService.Client.ViewModel"
+             xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:validate="clr-namespace:StudentService.Client.UI.Validation"
+             xmlns:local="clr-namespace:StudentService.Client.UI.Pages"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=vm:CmmonViewModel}"
+             d:DesignHeight="300" d:DesignWidth="600">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+
+        <GridSplitter Grid.Row="1" Grid.ColumnSpan="3" Height="3"
+              HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+
+        <DataGrid Grid.Row="0"
+          AutoGenerateColumns="False"
+          CanUserAddRows="False"
+          Cursor="Arrow"
+          ItemsSource="{Binding StudentWithGrades, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+          CellStyle="{StaticResource {x:Type DataGridCell}}"
+          RowStyle="{StaticResource {x:Type DataGridRow}}"
+          ColumnHeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="Auto" Binding="{Binding StudentId}" Header="Id"/>
+                <DataGridTextColumn Width="*" Binding="{Binding StudentName}" Header="Имя"/>
+                <DataGridTextColumn Width="*" Binding="{Binding StudentSurname}" Header="Фамилия"/>
+                <DataGridTextColumn Width="*" Binding="{Binding SubjectCount}" Header="Количество предметов"/>
+                <DataGridTextColumn Width="*" Binding="{Binding AverageGrade}" Header="Средняя оценка"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.ColumnSpan="3" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" 
+            Command="{Binding GetStudentWithGradesCommand}" 
+            Content="Обновить данные" 
+            Style="{StaticResource {x:Type Button}}" 
+            Margin="0,0,0.5,0"/>
+
+            <Button Grid.Column="1" 
+            Command="{Binding OpenPopupCommand}" 
+            Content="Сгенерировать тестовые данные" 
+            Style="{StaticResource {x:Type Button}}" 
+            Margin="0.5,0,0,0"/>
+        </Grid>
+
+        <Popup IsOpen="{Binding IsPopupOpen}" 
+               Style="{StaticResource PopupStyle}">
+            <Border Style="{StaticResource PopupBorderStyle}">
+                <StackPanel Style="{StaticResource PopupStackPanelStyle}">
+                    <extToolkit:WatermarkTextBox 
+                        Watermark="Введите количество записей" 
+                        Style="{StaticResource PopupTextBoxStyle}">
+                        <extToolkit:WatermarkTextBox.Text>
+                            <Binding Path="CountEntities" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <validate:NumericValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </extToolkit:WatermarkTextBox.Text>
+                    </extToolkit:WatermarkTextBox>
+                    <Button Content="Добавить" Command="{Binding GeneradeSeedData}" 
+                    Style="{StaticResource PopupButtonStyle}" />
+                </StackPanel>
+            </Border>
+        </Popup>
+    </Grid>
+
+</UserControl>

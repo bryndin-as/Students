@@ -23,7 +23,7 @@ namespace StudentService.DAL.EF
 
         TestFillDbRepository? testFillDbRepository;
 
-        public IGenericRepository<Student> StudentRepository =>
+        public IStudentRepository StudentRepository =>
             studentRepository ??= new StudentRepository(_context);
 
         public IGenericRepository<Subject> SubjectRepository =>
